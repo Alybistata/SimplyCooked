@@ -9,6 +9,14 @@
     <title>SimplyCooked</title>
 
     <style>
+
+      a 
+      { 
+        margin-top: 10px;
+        text-decoration: none; 
+        color: black;
+      }
+
       label, select, button {
         margin-bottom: 10px;
         display: inline-block;
@@ -24,6 +32,7 @@
       }
   
       ul {
+        text-decoration: none;
         text-align: center;
         list-style: none;
         display:flex;
@@ -33,12 +42,15 @@
       }
   
       li {
-        margin-bottom: 20px;
-        padding: 15px;
-        border: 1px solid #ddd;
-        box-sizing: border-box;
-        width: 200px; /* Adjust the width as needed */
-        text-align: center;
+      background-color: burlywood;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 5px solid #ddd;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 8px; /* Add border-radius for rounded corners */
       }
   
       li img {
@@ -46,6 +58,14 @@
         margin-bottom: 10px;
         width: 100%;
       }
+
+      #footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;            /* Footer height */
+      }
+
     </style>
 
 
@@ -72,7 +92,7 @@
     </div>
 
     <h1>Recipe Search</h1>
-
+    <hr>
     <label for="cuisine">Cuisine:</label>
     <select id="cuisine">
       <option value="">All Cuisines</option>
@@ -81,8 +101,6 @@
     <label for="tags">Tags:</label>
     <select id="tags">
       <option value="">All Tags</option>
-      <option value="highprotein">High Protein</option>
-      <option value="vegan">Vegan</option>
     </select>
   
     <label for="difficulty">Difficulty:</label>
@@ -116,7 +134,9 @@
       <option value="3">$$$</option>
     </select>
     <button onclick="filterRecipes()">Search</button>
-  
+
+    <hr>
+
     <ul id="recipeList">
       <!-- The filtered recipe list will be displayed here -->
     </ul>
@@ -140,7 +160,7 @@
           name: "Bulgarian Stuffed Peppers",
           path: "testpath1",
           cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
+          tags: ["Balkan", "Exoctic"],
           difficulty: "Easy",
           vegetarian: "yes",
           image: "img/Bulgarian.jpeg",
@@ -151,329 +171,146 @@
           name: "Chicken Tikka Masala",
           path: "testpath2",
           cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
+          tags: ["Indian", "High protein"],
           difficulty: "Intermediate",
           vegetarian: "no",
           image: "img/Indian.jpg",
           recipeLink: "Indianrecipe.html",
           spicy: 3
         },
+                {
+          name: "Spaghetti Bolognese",
+          path: "testpath3",
+          cuisine: "Italian",
+          tags: ["Pasta", "Tomato Sauce"],
+          difficulty: "Intermediate",
+          vegetarian: "no",
+          image: "img/SpaghettiBolognese.jpeg",
+          recipeLink: "Italianrecipe.html",
+          spicy: 1
+        },
         {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
+          name: "Vegetable Stir-Fry",
+          path: "testpath4",
+          cuisine: "Asian",
+          tags: ["Vegetables", "Stir-Fry"],
           difficulty: "Easy",
           vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
+          image: "img/VegetableStirFry.jpeg",
+          recipeLink: "Asianrecipe.html",
           spicy: 2
         },
         {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
+          name: "Classic Margherita Pizza",
+          path: "testpath5",
+          cuisine: "Italian",
+          tags: ["Pizza", "Tomato", "Mozzarella"],
           difficulty: "Easy",
           vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
+          image: "img/MargheritaPizza.jpeg",
+          recipeLink: "Italianrecipe.html",
+          spicy: 1
+        },  
         {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
+          name: "Grilled Salmon",
+          path: "testpath6",
+          cuisine: "Seafood",
+          tags: ["Salmon", "Grilled"],
           difficulty: "Intermediate",
           vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
+          image: "img/GrilledSalmon.jpeg",
+          recipeLink: "Seafoodrecipe.html",
+          spicy: 1
+        },
+        {
+          name: "Mushroom Risotto",
+          path: "testpath7",
+          cuisine: "Italian",
+          tags: ["Risotto", "Mushrooms"],
+          difficulty: "Intermediate",
+          vegetarian: "yes",
+          image: "img/MushroomRisotto.jpeg",
+          recipeLink: "Italianrecipe.html",
+          spicy: 1
+        },
+        {
+          name: "Tofu Stir-Fry",
+          path: "testpath8",
+          cuisine: "Asian",
+          tags: ["Tofu", "Stir-Fry"],
           difficulty: "Easy",
           vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
+          image: "img/TofuStirFry.jpeg",
+          recipeLink: "Asianrecipe.html",
           spicy: 2
         },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },        {
-          name: "Bulgarian Stuffed Peppers",
-          path: "testpath1",
-          cuisine: "Balkan",
-          tags: ["Tag1", "Tag2"],
-          difficulty: "Easy",
-          vegetarian: "yes",
-          image: "img/Bulgarian.jpeg",
-          recipeLink: "Balkanrecipe.html",
-          spicy: 2
-        },
-        {
-          name: "Chicken Tikka Masala",
-          path: "testpath2",
-          cuisine: "Indian",
-          tags: ["Tag2", "Tag3"],
-          difficulty: "Intermediate",
-          vegetarian: "no",
-          image: "img/Indian.jpg",
-          recipeLink: "Indianrecipe.html",
-          spicy: 3
-        },
+
+            {
+      name: "Chicken Alfredo Pasta",
+      path: "testpath9",
+      cuisine: "Italian",
+      tags: ["Chicken", "Pasta", "Alfredo"],
+      difficulty: "Intermediate",
+      vegetarian: "no",
+      image: "img/ChickenAlfredoPasta.jpeg",
+      recipeLink: "Italianrecipe.html",
+      spicy: 1
+    },
+    {
+      name: "Caprese Salad",
+      path: "testpath10",
+      cuisine: "Italian",
+      tags: ["Salad", "Tomato", "Mozzarella", "Basil"],
+      difficulty: "Easy",
+      vegetarian: "yes",
+      image: "img/CapreseSalad.jpeg",
+      recipeLink: "Italianrecipe.html",
+      spicy: 1
+    },
+    {
+      name: "Shrimp Pad Thai",
+      path: "testpath11",
+      cuisine: "Asian",
+      tags: ["Shrimp", "Noodles", "Pad Thai"],
+      difficulty: "Intermediate",
+      vegetarian: "no",
+      image: "img/ShrimpPadThai.jpeg",
+      recipeLink: "Asianrecipe.html",
+      spicy: 2
+    },
+    {
+      name: "Vegan Buddha Bowl",
+      path: "testpath12",
+      cuisine: "Plant-based",
+      tags: ["Vegan", "Bowl", "Quinoa", "Vegetables"],
+      difficulty: "Easy",
+      vegetarian: "yes",
+      image: "img/VeganBuddhaBowl.jpeg",
+      recipeLink: "Plantbasedrecipe.html",
+      spicy: 1
+    },
+    {
+      name: "BBQ Pulled Pork Sandwich",
+      path: "testpath13",
+      cuisine: "American",
+      tags: ["Pulled Pork", "BBQ", "Sandwich"],
+      difficulty: "Intermediate",
+      vegetarian: "no",
+      image: "img/BBQPulledPorkSandwich.jpeg",
+      recipeLink: "Americanrecipe.html",
+      spicy: 2
+    },
+    {
+      name: "Chocolate Chip Cookies",
+      path: "testpath14",
+      cuisine: "Dessert",
+      tags: ["Cookies", "Chocolate Chip", "Dessert"],
+      difficulty: "Easy",
+      vegetarian: "yes",
+      image: "img/ChocolateChipCookies.jpeg",
+      recipeLink: "Dessertrecipe.html",
+      spicy: 1
+    },
       ]; 
 
 
@@ -492,9 +329,9 @@
       const tags = [...new Set(recipes.flatMap(recipe => recipe.tags))];
       const difficultyLevels = [...new Set(recipes.map(recipe => recipe.difficulty))];
   
-      populateDropdown("cuisine", cuisines);
+      //populateDropdown("cuisine", cuisines);
       populateDropdown("tags", tags);
-      populateDropdown("difficulty", difficultyLevels);
+      //populateDropdown("difficulty", difficultyLevels);
   
       function filterRecipes() {
           
@@ -525,18 +362,22 @@
       filteredRecipes.forEach(recipe => {
         const listItem = document.createElement("li");
 
+        const box = document.createElement("a");
+        box.href = recipe.recipeLink;
+        listItem.appendChild(box);
+
         // Create image element
         const imageElement = document.createElement("img");
         imageElement.src = recipe.image;
         imageElement.alt = `${recipe.name} Image`;
-        imageElement.style.width = "100px";  // Adjust the width as needed
-        listItem.appendChild(imageElement);
+        imageElement.style.width = "175px";  // Adjust the width as needed
+        box.appendChild(imageElement);
 
         // Create link element
         const linkElement = document.createElement("a");
         linkElement.href = recipe.recipeLink;
         linkElement.textContent = recipe.name;
-        listItem.appendChild(linkElement);
+        box.appendChild(linkElement);
 
         recipeList.appendChild(listItem);
       });
@@ -547,7 +388,7 @@
 
 
   </body>
-  <footer>
+  <footer id="footer">
     <small> <center>&copy;Copyright 2022, SimplyCooked - 2023, ALY </center> </small>
   </footer>
 </center>
